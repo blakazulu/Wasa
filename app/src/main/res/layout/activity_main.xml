@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@drawable/bg_gradient"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/llCCP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="367dp"
+        android:gravity="center_vertical"
+        android:layoutDirection="ltr"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.hbb20.CountryCodePicker
+            android:id="@+id/ccp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="4dp"
+            android:background="@drawable/custom_input"
+            app:ccp_arrowColor="@color/textBlur"
+            app:ccp_autoDetectCountry="true"
+            app:ccp_contentColor="#ffffff" />
+
+        <EditText
+            android:id="@+id/etCarrierNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/custom_input"
+            android:hint="@string/input_label"
+            android:imeOptions="actionDone"
+            android:importantForAutofill="no"
+            android:inputType="phone"
+            android:maxLength="15"
+            android:padding="8dp"
+            android:singleLine="true"
+            android:textColor="@color/textFocus"
+            android:textColorHint="@color/textHint" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/etMessage"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/custom_input"
+        android:drawableLeft="@drawable/custom_message_icon"
+        android:drawablePadding="12dp"
+        android:gravity="center_vertical"
+        android:hint="@string/input_message"
+        android:imeOptions="actionDone"
+        android:importantForAutofill="no"
+        android:inputType="textAutoCorrect|textAutoComplete"
+        android:padding="8dp"
+        android:textColor="@color/textFocus"
+        android:textColorHint="@color/textHint"
+        app:layout_constraintTop_toBottomOf="@id/llCCP" />
+
+    <ImageButton
+        android:id="@+id/imgWhatsapp"
+        android:layout_width="320dp"
+        android:layout_height="320dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="454dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/flag_transparent"
+        android:contentDescription="@string/image_button"
+        android:scaleType="fitCenter"
+        android:src="@drawable/whatsapp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
