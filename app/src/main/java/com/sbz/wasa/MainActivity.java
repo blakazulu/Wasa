@@ -17,25 +17,23 @@ import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.hbb20.CountryCodePicker;
+
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
     ConstraintLayout mainLayout;
     CountryCodePicker ccp;
     EditText etCarrierNumber;
     EditText etMessage;
-    ImageButton imgWhatsapp;
-    ClipboardManager clipboard;
-    String pastedData = "";
-
-    private TextView.OnEditorActionListener enterPressedListener =
+    private final TextView.OnEditorActionListener enterPressedListener =
             new TextView.OnEditorActionListener() {
                 @Override
                 public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
@@ -43,13 +41,16 @@ public class MainActivity extends AppCompatActivity {
                         if (etCarrierNumber.length() > 5) {
                             goToWhatsapp();
                         } else {
-                            showMessage("I need a valid number");
+                            showMessage(v, "I need a valid number");
                         }
                         return true;
                     }
                     return false;
                 }
             };
+    ClipboardManager clipboard;
+    String pastedData = "";
+    FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         // hide action bar
-        getSupportActionBar().hide();
+        Objects.requireNonNull(getSupportActionBar()).hide();
 
         // only portrait mode
         setContentView(R.layout.activity_main);
@@ -69,18 +70,18 @@ public class MainActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
         );
 
-        mainLayout = (ConstraintLayout) findViewById(R.id.mainLayout);
-        imgWhatsapp = (ImageButton) findViewById(R.id.imgWhatsapp);
-        ccp = (CountryCodePicker) findViewById(R.id.ccp);
-        etCarrierNumber = (EditText) findViewById(R.id.etCarrierNumber);
-        etMessage = (EditText) findViewById(R.id.etMessage);
+        mainLayout = findViewById(R.id.mainLayout);
+        fab = findViewById(R.id.fab);
+        ccp = findViewById(R.id.ccp);
+        etCarrierNumber = findViewById(R.id.etCarrierNumber);
+        etMessage = findViewById(R.id.etMessage);
 
         ccp.registerCarrierNumberEditText(etCarrierNumber);
 
         getDataFromClipboard();
         addClipboardListener();
 
-        imgWhatsapp.setOnClickListener(new ImageClick());
+        fab.setOnClickListener(new FabClick());
 
         etCarrierNumber.setOnEditorActionListener(enterPressedListener);
         etCarrierNumber.addTextChangedListener(new phoneNumberListener());
@@ -114,10 +115,10 @@ public class MainActivity extends AppCompatActivity {
         clipboard = (ClipboardManager) this.getSystemService(Context.CLIPBOARD_SERVICE);
         clipboard.addPrimaryClipChangedListener(new ClipboardManager.OnPrimaryClipChangedListener() {
             public void onPrimaryClipChanged() {
-                ClipData.Item item = clipboard.getPrimaryClip().getItemAt(0);
+                ClipData.Item item = Objects.requireNonNull(clipboard.getPrimaryClip()).getItemAt(0);
                 pastedData = (String) item.getText();
                 if (checkLeadingZero(pastedData)) {
-                    pastedData.substring(1);
+                    pastedData = pastedData.substring(1);
                 }
                 etCarrierNumber.setText(pastedData);
             }
@@ -129,14 +130,14 @@ public class MainActivity extends AppCompatActivity {
     private void getDataFromClipboard() {
         try {
             clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-            ClipData.Item item = clipboard.getPrimaryClip().getItemAt(0);
+            ClipData.Item item = Objects.requireNonNull(clipboard.getPrimaryClip()).getItemAt(0);
             pastedData = (String) item.getText();
             if (checkLeadingZero(pastedData)) {
-                pastedData.substring(1);
+                pastedData = pastedData.substring(1);
             }
             etCarrierNumber.setText(pastedData);
         } catch (Exception e) {
-            e.printStackTrace();
+//            e.printStackTrace();
         }
     }
 
@@ -151,14 +152,14 @@ public class MainActivity extends AppCompatActivity {
             Intent whatsappIntent = new Intent(Intent.ACTION_VIEW, uri);
 
             if (whatsappIntent.resolveActivity(getPackageManager()) == null) {
-                showMessage("Whatsapp not installed.");
+                showMessage(mainLayout, "Whatsapp not installed.");
                 return;
             }
 
             startActivity(whatsappIntent);
         } catch (PackageManager.NameNotFoundException e) {
-            showMessage("Whatsapp app not installed in your phone");
-            e.printStackTrace();
+            showMessage(mainLayout, "Whatsapp app not installed in your phone");
+//            e.printStackTrace();
         }
     }
 
@@ -166,22 +167,22 @@ public class MainActivity extends AppCompatActivity {
         return str.length() == 1 && str.startsWith("0");
     }
 
-    private void showMessage(String message) {
+    private void showMessage(View v, String message) {
         Snackbar snackbar = Snackbar
-                .make(mainLayout, message, Snackbar.LENGTH_LONG);
+                .make(v, message, Snackbar.LENGTH_LONG);
         TextView mainTextView = (TextView) (snackbar.getView()).findViewById(com.google.android.material.R.id.snackbar_text);
         mainTextView.setTextColor(Color.parseColor("#22B24C"));
         mainTextView.setGravity(Gravity.CENTER_VERTICAL);
         snackbar.show();
     }
 
-    class ImageClick implements View.OnClickListener {
+    class FabClick implements View.OnClickListener {
         @Override
         public void onClick(View v) {
             if (etCarrierNumber.length() > 5) {
                 goToWhatsapp();
             } else {
-                showMessage("I need a valid number");
+                showMessage(v, "I need a valid number");
             }
         }
     }

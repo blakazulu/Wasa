@@ -9,6 +9,21 @@
     android:background="@drawable/bg_gradient"
     tools:context=".MainActivity">
 
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="409dp"
+        android:layout_height="186dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="545dp"
+        android:contentDescription="@string/logo"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_transparent" />
+
     <LinearLayout
         android:id="@+id/llCCP"
         android:layout_width="match_parent"
@@ -70,36 +85,41 @@
         android:textColorHint="@color/textHint"
         app:layout_constraintTop_toBottomOf="@id/llCCP" />
 
-    <ImageButton
-        android:id="@+id/imgWhatsapp"
-        android:layout_width="320dp"
-        android:layout_height="320dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="454dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/flag_transparent"
-        android:contentDescription="@string/image_button"
-        android:scaleType="fitCenter"
-        android:src="@drawable/whatsapp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <!--    <ImageButton-->
+    <!--        android:id="@+id/imgWhatsapp"-->
+    <!--        android:layout_width="320dp"-->
+    <!--        android:layout_height="320dp"-->
+    <!--        android:layout_marginStart="48dp"-->
+    <!--        android:layout_marginTop="454dp"-->
+    <!--        android:layout_marginEnd="32dp"-->
+    <!--        android:layout_marginBottom="32dp"-->
+    <!--        android:background="@drawable/flag_transparent"-->
+    <!--        android:contentDescription="@string/send"-->
+    <!--        android:scaleType="fitCenter"-->
+    <!--        android:src="@drawable/whatsapp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.0"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="409dp"
-        android:layout_height="186dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginBottom="545dp"
-        android:contentDescription="@string/logo"
-        android:scaleType="centerCrop"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="92dp"
+        android:contentDescription="@string/send"
+        android:elevation="8dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/send"
+        app:fabCustomSize="180dp"
+        app:fabSize="auto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_transparent" />
+        app:maxImageSize="160dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Wasa</string>
     <string name="logo">Wasa logo</string>
-    <string name="image_button">Go to whatsapp</string>
+    <string name="send">Send to whatsapp</string>
     <string name="input_label">Enter a phone number</string>
     <string name="input_message">Optional,"\n"add a message if you feel like it</string>
 </resources>
