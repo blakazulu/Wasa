@@ -4,4 +4,12 @@
     <string name="send">Send to whatsapp</string>
     <string name="input_label">Enter a phone number</string>
     <string name="input_message">Optional,"\n"add a message if you feel like it</string>
+    <string name="navigate_next">Go to the next slide</string>
+    <string name="navigate_back">Go back to previous slide</string>
+    <string name="selector">Selector</string>
+    <string name="onboard_guide_one">Select country code</string>
+    <string name="onboard_guide_two">Write or Paste a number</string>
+    <string name="onboard_guide_three">Write a message</string>
+    <string name="onboard_guide_four">Click send</string>
+    <string name="onboard_get_started">Get Started</string>
 </resources>

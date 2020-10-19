@@ -7,11 +7,12 @@
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
     android:background="@drawable/bg_gradient"
+    android:padding="16dp"
     tools:context=".MainActivity">
 
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imgWasaLogo"
         android:layout_width="409dp"
         android:layout_height="186dp"
         android:layout_marginEnd="2dp"
@@ -28,7 +29,6 @@
         android:id="@+id/llCCP"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="160dp"
         android:layout_marginBottom="367dp"
         android:gravity="center_vertical"
@@ -52,7 +52,6 @@
             android:id="@+id/etCarrierNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
             android:background="@drawable/custom_input"
             android:hint="@string/input_label"
             android:imeOptions="actionDone"
@@ -69,9 +68,8 @@
         android:id="@+id/etMessage"
         android:layout_width="match_parent"
         android:layout_height="64dp"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="353dp"
         android:background="@drawable/custom_input"
         android:drawableLeft="@drawable/custom_message_icon"
         android:drawablePadding="12dp"
@@ -83,31 +81,16 @@
         android:padding="8dp"
         android:textColor="@color/textFocus"
         android:textColorHint="@color/textHint"
-        app:layout_constraintTop_toBottomOf="@id/llCCP" />
-
-    <!--    <ImageButton-->
-    <!--        android:id="@+id/imgWhatsapp"-->
-    <!--        android:layout_width="320dp"-->
-    <!--        android:layout_height="320dp"-->
-    <!--        android:layout_marginStart="48dp"-->
-    <!--        android:layout_marginTop="454dp"-->
-    <!--        android:layout_marginEnd="32dp"-->
-    <!--        android:layout_marginBottom="32dp"-->
-    <!--        android:background="@drawable/flag_transparent"-->
-    <!--        android:contentDescription="@string/send"-->
-    <!--        android:scaleType="fitCenter"-->
-    <!--        android:src="@drawable/whatsapp"-->
-    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintHorizontal_bias="0.0"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/llCCP"
+        tools:layout_editor_absoluteX="16dp" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginTop="443dp"
         android:layout_marginBottom="92dp"
         android:contentDescription="@string/send"
         android:elevation="8dp"
@@ -119,6 +102,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:maxImageSize="160dp" />
 
 

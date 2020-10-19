@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C3B8B8"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/onBoardImage"
+        android:layout_width="380dp"
+        android:layout_height="301dp"
+        android:contentDescription="@string/onboard_guide_one"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pic_one_demo" />
+
+    <TextView
+        android:id="@+id/onBoardTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcom to WASA"
+        android:textColor="#fff"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgOnBoardBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/navigate_back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_back" />
+
+    <ImageView
+        android:id="@+id/imgOnBoardNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/navigate_next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_next" />
+
+
+    <ImageView
+        android:id="@+id/indicatorOne"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="32dp"
+        android:contentDescription="@string/selector"
+        app:layout_constraintBottom_toTopOf="@+id/btnGetStarted"
+        app:layout_constraintEnd_toStartOf="@+id/indicatorTwo"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/selected" />
+
+    <ImageView
+        android:id="@+id/indicatorTwo"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="@string/selector"
+        app:layout_constraintBottom_toBottomOf="@+id/indicatorOne"
+        app:layout_constraintEnd_toStartOf="@+id/indicatorThree"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/indicatorOne"
+        app:layout_constraintTop_toTopOf="@+id/indicatorOne"
+        app:srcCompat="@drawable/selected" />
+
+    <ImageView
+        android:id="@+id/indicatorThree"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="@string/selector"
+        app:layout_constraintBottom_toBottomOf="@+id/indicatorTwo"
+        app:layout_constraintEnd_toStartOf="@+id/indicatorFour"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/indicatorTwo"
+        app:layout_constraintTop_toTopOf="@+id/indicatorTwo"
+        app:srcCompat="@drawable/selected" />
+
+    <ImageView
+        android:id="@+id/indicatorFour"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:contentDescription="@string/selector"
+        app:layout_constraintBottom_toBottomOf="@+id/indicatorThree"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/indicatorThree"
+        app:layout_constraintTop_toTopOf="@+id/indicatorThree"
+        app:srcCompat="@drawable/selected" />
+
+    <Button
+        android:id="@+id/btnGetStarted"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_bg"
+        android:text="@string/onboard_get_started"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
