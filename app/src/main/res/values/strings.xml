@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Wasa</string>
+    <string name="sharedPrefOnboardingKey">wasa-onboarding</string>
     <string name="logo">Wasa logo</string>
     <string name="send">Send to whatsapp</string>
     <string name="input_label">Enter a phone number</string>
@@ -7,9 +8,23 @@
     <string name="navigate_next">Go to the next slide</string>
     <string name="navigate_back">Go back to previous slide</string>
     <string name="selector">Selector</string>
-    <string name="onboard_guide_one">Select country code</string>
-    <string name="onboard_guide_two">Write or Paste a number</string>
-    <string name="onboard_guide_three">Write a message</string>
-    <string name="onboard_guide_four">Click send</string>
+
+    <string name="onboard_guide_one_title">WASA</string>
+    <string name="onboard_guide_one_text">Welcome to wasa...\nlet\'s learn how to use it</string>
+
+    <string name="onboard_guide_two_title">Country</string>
+    <string name="onboard_guide_two_text">Country code is selected automatically.\nClick it
+        to select a different country</string>
+
+    <string name="onboard_guide_three_title">Number</string>
+    <string name="onboard_guide_three_text">Write or Paste a phone number</string>
+
+    <string name="onboard_guide_four_title">Message</string>
+    <string name="onboard_guide_four_text">If you want, you can write a message</string>
+
+    <string name="onboard_guide_five_title">Send</string>
+    <string name="onboard_guide_five_text">That\'s it, your done...\nSimple right?\nWe do all
+        the heavy lifting for you</string>
+
     <string name="onboard_get_started">Get Started</string>
 </resources>

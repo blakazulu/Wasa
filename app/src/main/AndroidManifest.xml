@@ -11,7 +11,7 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.Launcher">
-        <activity android:name=".SlideActivity">
+        <activity android:name=".OnboardingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
