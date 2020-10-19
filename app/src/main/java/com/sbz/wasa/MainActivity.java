@@ -11,6 +11,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
@@ -27,6 +28,9 @@ import com.google.android.material.snackbar.Snackbar;
 import com.hbb20.CountryCodePicker;
 
 import java.util.Objects;
+
+import hotchemi.android.rate.AppRate;
+import hotchemi.android.rate.OnClickButtonListener;
 
 public class MainActivity extends AppCompatActivity {
     ConstraintLayout mainLayout;
@@ -70,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
         );
 
+        startAppRate();
         mainLayout = findViewById(R.id.mainLayout);
         fab = findViewById(R.id.fab);
         ccp = findViewById(R.id.ccp);
@@ -108,6 +113,25 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         getDataFromClipboard();
+    }
+
+    void startAppRate() {
+        AppRate.with(this)
+                .setInstallDays(0) // default 10, 0 means install day.
+                .setLaunchTimes(3) // default 10
+                .setRemindInterval(2) // default 1
+                .setShowLaterButton(true) // default true
+                .setDebug(false) // default false
+                .setOnClickButtonListener(new OnClickButtonListener() { // callback listener.
+                    @Override
+                    public void onClickButton(int which) {
+                        Log.d(MainActivity.class.getName(), Integer.toString(which));
+                    }
+                })
+                .monitor();
+
+        // Show a dialog if meets conditions
+        AppRate.showRateDialogIfMeetsConditions(this);
     }
 
     // show clipboard paste inside the edit text -> this is for android 10 or higher
