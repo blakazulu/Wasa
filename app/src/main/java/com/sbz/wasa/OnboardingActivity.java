@@ -24,20 +24,21 @@ public class OnboardingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.onboarding_main_layout);
 
-//        if (onboardingOccured()) {
-//            openMainActivity();
-//        } else {
-//            SharedPreferences.Editor editor =
-//                    getSharedPreferences(getString(R.string.sharedPrefOnboardingKey), MODE_PRIVATE).edit();
-//            editor.putBoolean(getString(R.string.sharedPrefOnboardingKey), true);
-//            editor.commit();
-//        }
+        if (onboardingOccured()) {
+            openMainActivity();
+        } else {
+            SharedPreferences.Editor editor =
+                    getSharedPreferences(getString(R.string.sharedPrefOnboardingKey), MODE_PRIVATE).edit();
+            editor.putBoolean(getString(R.string.sharedPrefOnboardingKey), true);
+            editor.commit();
+        }
 
         PaperOnboardingEngineExtended engine =
                 new PaperOnboardingEngineExtended(findViewById(R.id.onboardingRootView),
                         getDataForOnboarding(),
                         getApplicationContext());
 
+        // When swiping between pages in the onboarding screen
 //        engine.setOnChangeListener(new PaperOnboardingOnChangeListener() {
 //            @Override
 //            public void onPageChanged(int oldElementIndex, int newElementIndex) {
@@ -45,6 +46,7 @@ public class OnboardingActivity extends AppCompatActivity {
 //            }
 //        });
 
+        // When moving all the way to the end and exiting the onboarding
         engine.setOnRightOutListener(new PaperOnboardingOnRightOutListener() {
             @Override
             public void onRightOut() {
@@ -75,31 +77,31 @@ public class OnboardingActivity extends AppCompatActivity {
                         getString(R.string.onboard_guide_one_title),
                         getString(R.string.onboard_guide_one_text),
                         Color.parseColor(stringFormatColor(R.color.onboard_bg_one)),
-                        R.drawable.logo_onboard, R.drawable.key);
+                        R.drawable.logo_onboard, R.drawable.ic_one);
         PaperOnboardingPage scr2 =
                 new PaperOnboardingPage(
                         getString(R.string.onboard_guide_two_title),
                         getString(R.string.onboard_guide_two_text),
                         Color.parseColor(stringFormatColor(R.color.onboard_bg_two)),
-                        R.drawable.world, R.drawable.key);
+                        R.drawable.world, R.drawable.ic_two);
         PaperOnboardingPage scr3 =
                 new PaperOnboardingPage(
                         getString(R.string.onboard_guide_three_title),
                         getString(R.string.onboard_guide_three_text),
                         Color.parseColor(stringFormatColor(R.color.onboard_bg_three)),
-                        R.drawable.numbers, R.drawable.key);
+                        R.drawable.numbers, R.drawable.ic_three);
         PaperOnboardingPage scr4 =
                 new PaperOnboardingPage(
                         getString(R.string.onboard_guide_four_title),
                         getString(R.string.onboard_guide_four_text),
                         Color.parseColor(stringFormatColor(R.color.onboard_bg_four)),
-                        R.drawable.message, R.drawable.key);
+                        R.drawable.message, R.drawable.ic_four);
         PaperOnboardingPage scr5 =
                 new PaperOnboardingPage(
                         getString(R.string.onboard_guide_five_title),
                         getString(R.string.onboard_guide_five_text),
                         Color.parseColor(stringFormatColor(R.color.onboard_bg_five)),
-                        R.drawable.send, R.drawable.key);
+                        R.drawable.send, R.drawable.ic_five);
 
         ArrayList<PaperOnboardingPage> elements = new ArrayList<>();
         elements.add(scr1);
@@ -116,7 +118,6 @@ public class OnboardingActivity extends AppCompatActivity {
 }
 
 class PaperOnboardingEngineExtended extends PaperOnboardingEngine {
-
     public PaperOnboardingEngineExtended(View rootLayout, ArrayList<PaperOnboardingPage> contentElements, Context appContext) {
         super(rootLayout, contentElements, appContext);
     }
@@ -125,9 +126,9 @@ class PaperOnboardingEngineExtended extends PaperOnboardingEngine {
     protected ViewGroup createContentTextView(PaperOnboardingPage PaperOnboardingPage) {
         ViewGroup viewGroup = super.createContentTextView(PaperOnboardingPage);
         TextView tvOne = (TextView) viewGroup.getChildAt(0);
-        tvOne.setTextColor(Color.BLACK);
+        tvOne.setTextColor(Color.WHITE);
         TextView tvTwo = (TextView) viewGroup.getChildAt(1);
-        tvTwo.setTextColor(Color.BLACK);
+        tvTwo.setTextColor(Color.WHITE);
 
         return viewGroup;
     }
