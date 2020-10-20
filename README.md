@@ -38,7 +38,7 @@ It's open source.
 
 
 ## Licencse
-<b>GNU General Public License v3.0<b></br> ![License](<https://img.shields.io/badge/License-GNU%20General%20Public%20License%20v3.0-blue>)
+![License](<https://img.shields.io/badge/License-GNU%20General%20Public%20License%20v3.0-blue>)
 
 
 
@@ -51,5 +51,3 @@ It's open source.
    [CountryCodePicker]: <https://github.com/hbb20/CountryCodePickerProject>
    [Ramotion]: <https://github.com/Ramotion/paper-onboarding-android>
    [Android-Rate]: <https://github.com/hotchemi/Android-Rate>
-   [License]: <https://img.shields.io/badge/License-GNU%20General%20Public%20License%20v3.0-blue>
-
