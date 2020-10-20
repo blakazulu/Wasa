@@ -1,8 +1,7 @@
 # Wasa
 ![wasa gif](https://media.giphy.com/media/zmGcxNogrxAGfIl8U4/giphy.gif)
 
-</br>
-![Current Version](https://img.shields.io/badge/Current%20Version-3.0-brightgreen>)
+![Current Version](https://img.shields.io/badge/Current%20Version-3.0-brightgreen>)</br>
 Wasa is a mobile app, written in java.
 
 ## Download it here
@@ -53,3 +52,4 @@ It's open source.
    [Ramotion]: <https://github.com/Ramotion/paper-onboarding-android>
    [Android-Rate]: <https://github.com/hotchemi/Android-Rate>
    [License]: <https://img.shields.io/badge/License-GNU%20General%20Public%20License%20v3.0-blue>
+
