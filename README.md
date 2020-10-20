@@ -36,6 +36,8 @@ It's open source.
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
 
+#### License
+* You can find the license here: [License]
 
 
 [//]: # (
@@ -47,3 +49,4 @@ There is no need to format nicely because it shouldn't be seen. Thanks SO - http
    [CountryCodePicker]: <https://github.com/hbb20/CountryCodePickerProject>
    [Ramotion]: <https://github.com/Ramotion/paper-onboarding-android>
    [Android-Rate]: <https://github.com/hotchemi/Android-Rate>
+   [License]: <https://github.com/blakazulu/Wasa/blob/master/LICENSE>
