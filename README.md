@@ -1,7 +1,7 @@
 # Wasa
 ![wasa gif](https://media.giphy.com/media/zmGcxNogrxAGfIl8U4/giphy.gif)
 
-![Current Version](https://img.shields.io/badge/Current%20Version-3.0-brightgreen>)</br>
+![Current Version](https://img.shields.io/badge/Current%20Version-3.0-brightgreen>)![License](<https://img.shields.io/badge/License-GNU%20General%20Public%20License%20v3.0-blue>)</br>
 Wasa is a mobile app, written in java.
 
 ## Download it here
@@ -37,14 +37,10 @@ It's open source.
 5. Create new Pull Request
 
 
-## Licencse
-![License](<https://img.shields.io/badge/License-GNU%20General%20Public%20License%20v3.0-blue>)
 
-
-
-
-
-[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
+[//]: # (
+These are reference links used in the body of this note and get stripped out when the markdown processor does its job.
+There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
 
    [Google Play Store]: <https://play.google.com/store/apps/details?id=com.sbz.wasa>
