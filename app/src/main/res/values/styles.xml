@@ -10,6 +10,8 @@
     <style name="AppTheme.Launcher" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="android:windowBackground">@drawable/launch_screen</item>
+        <item name="android:screenOrientation">portrait</item>
+        <item name="android:layoutDirection">ltr</item>
     </style>
 
     <style name="onboardingTextColor">
