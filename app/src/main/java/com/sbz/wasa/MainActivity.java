@@ -74,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
         );
 
+
         startAppRate();
         mainLayout = findViewById(R.id.mainLayout);
         fab = findViewById(R.id.fab);
@@ -92,6 +93,14 @@ public class MainActivity extends AppCompatActivity {
         etCarrierNumber.addTextChangedListener(new phoneNumberListener());
 
         etMessage.setOnEditorActionListener(enterPressedListener);
+
+        Intent phoneIntent = getIntent();
+        if (phoneIntent.getData() != null) {
+            Log.d("intent received", phoneIntent.getData().toString());
+            String phoneNumber = phoneIntent.getData().toString(); //contains tel:phone_no
+            phoneNumber = phoneNumber.substring(4);
+            etCarrierNumber.setText(phoneNumber);
+        }
     }
 
     // hiding bottom android buttons
