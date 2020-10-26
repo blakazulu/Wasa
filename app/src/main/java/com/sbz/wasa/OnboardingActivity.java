@@ -127,9 +127,9 @@ class PaperOnboardingEngineExtended extends PaperOnboardingEngine {
     protected ViewGroup createContentTextView(PaperOnboardingPage PaperOnboardingPage) {
         ViewGroup viewGroup = super.createContentTextView(PaperOnboardingPage);
         TextView tvOne = (TextView) viewGroup.getChildAt(0);
-        tvOne.setTextColor(Color.WHITE);
+        tvOne.setTextColor(Color.BLACK);
         TextView tvTwo = (TextView) viewGroup.getChildAt(1);
-        tvTwo.setTextColor(Color.WHITE);
+        tvTwo.setTextColor(Color.BLACK);
 
         return viewGroup;
     }
