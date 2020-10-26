@@ -1,7 +1,7 @@
 # Wasa
 ![wasa gif](https://media.giphy.com/media/zmGcxNogrxAGfIl8U4/giphy.gif)
 
-![Current Version](https://img.shields.io/badge/Current%20Version-3.0-brightgreen>)    ![License](<https://img.shields.io/badge/License-GNU%20General%20Public%20License%20v3.0-blue>)</br>
+![Current Version](https://img.shields.io/badge/Current%20Version-6.0-brightgreen>)    ![License](<https://img.shields.io/badge/License-GNU%20General%20Public%20License%20v3.0-blue>)</br>
 Wasa is a mobile app, written in java.
 
 ## Download it here
